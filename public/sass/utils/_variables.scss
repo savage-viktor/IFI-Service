@@ -1,0 +1,22 @@
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-primary-text: #212121;
+    --color-secondary-text: #757575;
+    --color-accent: #1D8DCD;
+    --color-contact-footer: rgba(255, 255, 255, 0.6);
+  
+    
+    --effect-time: 250ms;
+    --effect-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  %text-header {
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+  
+  %site-animation {
+    transition-duration: var(--effect-time);
+    transition-timing-function: var(--effect-function);
+  }
