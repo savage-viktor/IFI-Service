@@ -1,74 +1,78 @@
 body {
-    background-color: var(--color-white);
-  
-    color: var(--color-primary-text);
-    font-family: 'E-Ukraine', sans-serif;
-    // font-family: e-Ukraine;
+  background-color: var(--color-white);
 
-    letter-spacing: 0.03em;
-    font-size: 14px;
-    line-height: 1.2;
-  }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  ul {
-    margin: 0;
-    padding-inline-start: 0;
-  }
-  
-  img {
-    display: block;
-  }
+  color: var(--color-primary-text);
+  font-family: 'E-Ukraine', sans-serif;
 
-  ul {
-    list-style: none;
-  }
-  
-  // aproved
-  .container {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
-  
-    // @media screen and (min-width: 768px) {
-    //   max-width: 768px;
-    // }
-    // @media screen and (min-width: 1080px) {
-    //   max-width: 1200px;
-    // }
-  }
-  
-  .section {
-    padding-top: 40px;
-    padding-bottom: 40px;
-  
-    // @media screen and (min-width: 1080px) {
-    //   padding-top: 100px;
-    //   padding-bottom: 100px;
-    // }
-  }
-  
-  // .section-title {
-  //   margin-bottom: 30px;
-  
-  //   font-weight: 700;
-  //   font-size: 28px;
-  //   text-align: center;
-  
-  //   @media screen and (min-width: 1200px) {
-  //     font-size: 36px;
-  //     margin-bottom: 50px;
-  //   }
+  letter-spacing: 0.03em;
+  font-size: 14px;
+  line-height: 1.2;
+
+  margin: 0;
+  background-color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding-inline-start: 0;
+}
+
+img {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+// aproved
+.container {
+  position: relative;
+
+  max-width: 1080px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  // @media screen and (min-width: 768px) {
+  //   max-width: 768px;
   // }
+  // @media screen and (min-width: 1080px) {
+  //   max-width: 1200px;
+  // }
+}
+
+.section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  // @media screen and (min-width: 1080px) {
+  //   padding-top: 100px;
+  //   padding-bottom: 100px;
+  // }
+}
+
+// .section-title {
+//   margin-bottom: 30px;
+
+//   font-weight: 700;
+//   font-size: 28px;
+//   text-align: center;
+
+//   @media screen and (min-width: 1200px) {
+//     font-size: 36px;
+//     margin-bottom: 50px;
+//   }
+// }

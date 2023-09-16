@@ -26,6 +26,7 @@ body {
   letter-spacing: 0.03em;
   font-size: 14px;
   line-height: 1.2;
+  margin: 0;
 }
 
 a {
@@ -54,10 +55,11 @@ ul {
 }
 
 .container {
+  position: relative;
   max-width: 1080px;
   margin: 0 auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .section {
@@ -99,8 +101,11 @@ ul {
 }
 
 .site-nav__list {
+  position: relative;
+  font-size: 12px;
   width: 770px;
   margin-left: 10px;
+  margin-bottom: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -111,23 +116,37 @@ ul {
   }
 }
 
+.site-nav__list.is-open {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+  z-index: 6;
+  position: absolute;
+  left: 20%;
+  top: 100px;
+  width: 60vw;
+  text-align: center;
+  margin-left: 0px;
+  margin-bottom: 20px;
+}
+
 .site-nav__item {
   position: relative;
   padding-bottom: 6px;
   padding-left: 4px;
   padding-right: 4px;
+  margin-bottom: inherit;
 }
 
 .site-nav__link {
-  font-size: 16px;
   font-weight: 400;
   line-height: 21px;
   letter-spacing: 0em;
   text-align: left;
 }
-@media screen and (max-width: 790px) {
+@media screen and (min-width: 790px) {
   .site-nav__link {
-    font-size: 12px;
+    font-size: 16px;
   }
 }
 
@@ -144,13 +163,14 @@ ul {
 
 .menu-toggle {
   position: absolute;
+  padding: 0;
   top: 46px;
   right: 20px;
   border: none;
   background-color: transparent;
   fill: var(--color-accent);
 }
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 651px) {
   .menu-toggle {
     display: none;
   }
@@ -161,7 +181,7 @@ ul {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 93vh;
+  height: 50vh;
   background-color: white;
   z-index: 5;
   display: flex;
@@ -185,7 +205,7 @@ ul {
 }
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero {
-    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/background-hero-mob@2x.jpg);
+    background-image: url(../images/background-hero-mob@2x.jpg);
   }
 }
 
@@ -210,4 +230,6 @@ ul {
   letter-spacing: 0em;
   text-align: center;
   margin-bottom: 31px;
-}/*# sourceMappingURL=main.css.map */
+}align: center;
+  margin-bottom: 31px;
+}
