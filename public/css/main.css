@@ -2,8 +2,8 @@
   --color-white: #ffffff;
   --color-black: #000000;
   --color-primary-text: #212121;
-  --color-secondary-text: #757575;
-  --color-accent: #1D8DCD;
+  --color-secondary-text: #888787;
+  --color-accent: #1d8dcd;
   --color-contact-footer: rgba(255, 255, 255, 0.6);
   --effect-time: 250ms;
   --effect-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -26,6 +26,7 @@ body {
   letter-spacing: 0.03em;
   font-size: 14px;
   line-height: 1.2;
+  letter-spacing: 0em;
   margin: 0;
   background-color: white;
 }
@@ -66,6 +67,22 @@ ul {
 .section {
   padding-top: 40px;
   padding-bottom: 40px;
+}
+
+.section-title {
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+@media screen and (min-width: 651px) {
+  .section-title {
+    font-size: 26px;
+    line-height: 34px;
+    margin-bottom: 15px;
+  }
 }
 
 .hero__button {
@@ -279,4 +296,34 @@ ul {
   .hero__slogan {
     font-size: 18px;
   }
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.service-item {
+  max-width: 50%;
+  display: flex;
+}
+
+.service-item__about {
+  padding-top: 35px;
+}
+
+.service-item__name {
+  margin-bottom: 14px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+}
+
+.service-item__description {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 21px;
+  color: var(--color-secondary-text);
 }

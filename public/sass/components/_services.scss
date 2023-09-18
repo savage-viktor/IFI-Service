@@ -1,0 +1,26 @@
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+.service-item {
+  max-width: 50%;
+  display: flex;
+}
+.service-item__about {
+  padding-top: 35px;
+}
+.service-item__name {
+  margin-bottom: 14px;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+}
+.service-item__description {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 21px;
+  color: var(--color-secondary-text);
+}
