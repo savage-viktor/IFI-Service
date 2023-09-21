@@ -299,31 +299,197 @@ ul {
 }
 
 .services {
+  position: relative;
+  padding-top: 0px;
+}
+@media screen and (min-width: 450px) {
+  .services {
+    padding-top: 38px;
+  }
+}
+.services::before {
+  position: absolute;
+  top: 36px;
+  left: calc(50% - 120px);
+  content: "";
+  width: 240px;
+  height: 2px;
+  background: repeating-linear-gradient(to right, transparent 10px, transparent 30px, var(--color-accent) 30px, var(--color-accent) 50px);
+}
+@media screen and (min-width: 450px) {
+  .services::before {
+    top: 0px;
+  }
+}
+
+.service-list {
   display: flex;
   flex-wrap: wrap;
   max-width: 1160px;
   margin: 0 auto;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 .service-item {
-  max-width: 50%;
+  max-width: 100%;
   display: flex;
+}
+@media screen and (min-width: 900px) {
+  .service-item {
+    max-width: 50%;
+  }
+}
+
+.service-item__image {
+  display: none;
+}
+@media screen and (min-width: 450px) {
+  .service-item__image {
+    display: block;
+    max-width: 50%;
+    max-height: 200px;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+@media screen and (min-width: 650px) {
+  .service-item__image {
+    max-height: 250px;
+  }
+}
+
+.service-item:last-child {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.service-item:last-child .service-item__description {
+  position: relative;
+  display: block;
+  max-width: 521px;
+  text-align: center;
+  padding-bottom: 23px;
+  margin-bottom: 32px;
+}
+.service-item:last-child .service-item__description::after {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 120px);
+  content: "";
+  width: 240px;
+  height: 2px;
+  background: repeating-linear-gradient(to right, transparent 10px, transparent 30px, var(--color-accent) 30px, var(--color-accent) 50px);
+}
+@media screen and (min-width: 450px) {
+  .service-item:last-child .service-item__description {
+    padding-bottom: 31px;
+    margin-bottom: 47px;
+  }
 }
 
 .service-item__about {
-  padding-top: 35px;
+  text-align: center;
+  padding: 0 18px;
+}
+@media screen and (min-width: 450px) {
+  .service-item__about {
+    text-align: left;
+  }
 }
 
 .service-item__name {
+  margin-top: 29px;
   margin-bottom: 14px;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 31px;
+  line-height: 21px;
+}
+@media screen and (min-width: 650px) {
+  .service-item__name {
+    margin-top: 35px;
+    font-size: 24px;
+    line-height: 31px;
+  }
 }
 
 .service-item__description {
-  font-size: 16px;
+  font-size: 14px;
+  line-height: 18px;
   font-weight: 300;
-  line-height: 21px;
   color: var(--color-secondary-text);
+}
+@media screen and (min-width: 650px) {
+  .service-item__description {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+.service-item__interfaces {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-item__interfaces-header {
+  font-size: 16px;
+  line-height: 21px;
+  line-height: 29px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 650px) {
+  .service-item__interfaces-header {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+}
+
+.service-item__interfaces-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+}
+
+.service-item__interfaces-item {
+  padding: 10px;
+  width: calc((100% - 40px) / 2);
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+@media screen and (min-width: 650px) {
+  .service-item__interfaces-item {
+    width: calc((100% - 80px) / 4);
+    height: 200px;
+  }
+}
+
+.service-item__interfaces-image {
+  margin-bottom: 20px;
+  margin: auto;
+  display: block;
+  height: 60%;
+  width: 60%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.service-item__interfaces-model {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 300;
+}
+@media screen and (min-width: 650px) {
+  .service-item__interfaces-model {
+    font-size: 16px;
+    line-height: 21px;
+  }
 }
