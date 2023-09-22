@@ -78,6 +78,24 @@ ul {
     font-size: 26px;
     line-height: 34px;
 
-    margin-bottom: 15px;
+    margin-bottom: 18px;
   }
+}
+
+.section-description {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  text-align: center;
+  color: var(--color-secondary-text);
+  margin-bottom: 30px;
+
+  @media screen and (min-width: 651px) {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+a {
+  display: block;
 }

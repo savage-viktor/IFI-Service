@@ -1,0 +1,37 @@
+.contacts {
+  max-width: 1080px;
+  margin: auto;
+  padding: 0 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  & .section-title {
+    align-self: flex-start;
+  }
+}
+
+.contacts-container {
+  position: relative;
+  padding-top: 31px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    content: '';
+    width: 240px;
+    height: 2px;
+    background: repeating-linear-gradient(
+      to right,
+      transparent 10px,
+      transparent 30px,
+      var(--color-accent) 30px,
+      var(--color-accent) 50px
+    );
+  }
+}
+
+.contacts-item {
+}

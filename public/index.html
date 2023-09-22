@@ -9,6 +9,7 @@
       name="description"
       content="Ремонт на прошивка роутерів та модемів ZTE, Huawei, Alcatel, Novatel та інших"
     />
+
     <link rel="stylesheet" href="./css/main.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,7 +24,7 @@
     <header class="container">
       <nav class="site-nav">
         <a href="./index.html">
-          <img height="93px" src="./images/IFI_LOGO4x.png" alt="" />
+          <img height="93p" src="./images/IFI_LOGO4x.png" alt="" />
         </a>
         <ul class="site-nav__list">
           <li class="site-nav__item">
@@ -65,41 +66,10 @@
               <use href="./images/icons_sprite.svg#icon-menu-close"></use>
             </svg>
           </button>
-
-          <!-- <ul class="menu-container__list">
-            <li class="menu-container__item">
-              <a
-                class="menu-container__link site-nav__link--active"
-                href="./index.html"
-                >Студия</a
-              >
-            </li>
-            <li class="menu-container__item">
-              <a class="menu-container__link" href="./portfolio.html"
-                >Портфолио</a
-              >
-            </li>
-            <li class="menu-container__item">
-              <a class="menu-container__link" href="">Контакты</a>
-            </li>
-          </ul> -->
-
-          <!-- <ul class="menu-container__contact-list">
-            <li class="menu-container__contact-item">
-              <a class="contacts-list__link1" href="mailto:info@devstudio.com">
-                <span> info@devstudio.com </span>
-              </a>
-            </li>
-            <li class="menu-container__contact-item">
-              <a class="contacts-list__link1" href="tel:+380961111111">
-                <span> +38 096 111 11 11 </span>
-              </a>
-            </li>
-          </ul> -->
         </div>
       </nav>
     </header>
-    <!-- <br /> -->
+
     <main>
       <section class="hero">
         <div class="container">
@@ -256,121 +226,177 @@
         </ul>
       </section>
 
-      <section>
-        <h2 class="section-title" style="border: 1px solid black">
-          Виробники обладнання
-        </h2>
-        <p>Оберіть виробника обладнання для перегляду інформації</p>
-        <ul>
-          <li>
+      <section class="vendors">
+        <h2 class="section-title">Виробники обладнання</h2>
+        <p class="section-description">
+          Оберіть виробника обладнання для перегляду інформації
+        </p>
+
+        <ul class="vendor-list">
+          <li class="vendor-item">
             <a href="">
-              <img src="" alt="" />
+              <img
+                class="vendor-image novatel"
+                src="./images/vendors/novatel.jpg"
+                alt=""
+              />
             </a>
           </li>
-          <li>
+          <li class="vendor-item">
             <a href="">
-              <img src="" alt="" />
+              <svg class="vendor-image" width="159px">
+                <use href="./images/icons_sprite.svg#alcatel"></use>
+              </svg>
             </a>
           </li>
-          <li>
+
+          <li class="vendor-item">
             <a href="">
-              <img src="" alt="" />
+              <img
+                class="vendor-image bigger"
+                src="./images/vendors/huawei.png"
+                alt=""
+              />
             </a>
           </li>
-          <li>
+
+          <li class="vendor-item">
             <a href="">
-              <img src="" alt="" />
+              <svg class="vendor-image" width="83px">
+                <use href="./images/icons_sprite.svg#zte"></use>
+              </svg>
             </a>
           </li>
-          <li>
+          <li class="vendor-item">
             <a href="">
-              <img src="" alt="" />
+              <img
+                class="vendor-image bigger"
+                src="./images/vendors/netgear.webp"
+                alt=""
+              />
             </a>
-          </li>
-          <li>
-            <button></button>
           </li>
         </ul>
+        <button class="vendor-button" type="submit">Інший виробник</button>
       </section>
 
-      <section>
+      <section class="partners">
         <h2 class="section-title">Партнери</h2>
-        <p>
+        <p class="section-description">
           Активна співпраця з багатьма інтернет магазинами мобільного 3G/4G
           обладнання
         </p>
-        <ul>
-          <li>
+        <ul class="partner-list">
+          <li class="partner-item">
             <a href="">
-              <img src="" alt="" />
+              <img
+                class="partner-image"
+                src="./images/patrners/3gdigger.png"
+                alt=""
+              />
             </a>
           </li>
-          <li>
+          <li class="partner-item">
             <a href="">
-              <img src="" alt="" />
+              <img
+                class="partner-image"
+                src="./images/patrners/4gkiev.png"
+                alt=""
+              />
             </a>
           </li>
-          <li>
+
+          <li class="partner-item">
             <a href="">
-              <img src="" alt="" />
+              <img
+                class="partner-image"
+                src="./images/patrners/center5g.png"
+                alt=""
+              />
             </a>
           </li>
-          <li>
+
+          <li class="partner-item">
             <a href="">
-              <img src="" alt="" />
+              <img
+                class="partner-image"
+                src="./images/patrners/goodok.png"
+                alt=""
+              />
             </a>
           </li>
-          <li>
+          <li class="partner-item">
             <a href="">
-              <img src="" alt="" />
+              <img
+                class="partner-image"
+                src="./images/patrners/itcentre.png"
+                alt=""
+              />
             </a>
           </li>
-          <li>
+          <li class="partner-item">
             <a href="">
-              <img src="" alt="" />
+              <img
+                class="vendor-image"
+                src="./images/patrners/mobirator.png"
+                alt=""
+              />
             </a>
           </li>
-          <li>
+          <li class="partner-item">
             <a href="">
-              <img src="" alt="" />
+              <img
+                class="partner-image"
+                src="./images/patrners/mobitech.png"
+                alt=""
+              />
             </a>
           </li>
         </ul>
       </section>
 
-      <section>
-        <h2 class="section-title">Про мене</h2>
-        <h3>Дикун Віктор</h3>
-        <p>
-          Привіт, мене звати Віктор. Я займаюсь сервісом CDMA/GSM обладнання з
-          2009 року. До 2012 року працював інженером в сервісному центрі в
-          компанії мобільного звязку CDMA Ukraine. Потім працював головним
-          інженером в американській компанії ІТС, яка постачала обладнання з США
-          на український ринок. З початку 2016 року працюю як фізична особа
-          підприємець. Маю величезний досвід роботи з мобільними роутерами та
-          модемами. Щороку через мене проходить від 4 до 6 тисяч одиниць
-          обладнання, тому я точно знаю що робити з Вашим девайсом.
-        </p>
-        <ul>
-          <li>
-            <a href="">
-              <img src="" alt="" />
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="" alt="" />
-            </a>
-          </li>
-        </ul>
-        <img src="" alt="" />
+      <section class="about_us">
+        <h2 class="section-title">Про нас</h2>
+        <div class="about_us-container">
+          <img class="about_us-image" src="./images/dykun_viktor.jpg" alt="" />
+          <div class="about_us-card">
+            <h3 class="about_us-header">Дикун Віктор</h3>
+            <p class="about_us-description">
+              Привіт, мене звати Віктор. Я займаюсь сервісом CDMA/GSM обладнання
+              з 2009 року. До 2012 року працював інженером в сервісному центрі в
+              компанії мобільного звязку CDMA Ukraine. Потім працював головним
+              інженером в американській компанії ІТС, яка постачала обладнання з
+              США на український ринок. З початку 2016 року працюю як фізична
+              особа підприємець. Маю величезний досвід роботи з мобільними
+              роутерами та модемами. Щороку через мене проходить від 4 до 6
+              тисяч одиниць обладнання, тому я точно знаю що робити з Вашим
+              девайсом.
+            </p>
+            <ul class="about_us-social">
+              <li class="about_us-social_item">
+                <a href="">
+                  <svg width="35px" height="35px">
+                    <use href="./images/icons_sprite.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="about_us-social_item">
+                <a href="">
+                  <svg width="35px" height="35px">
+                    <use href="./images/icons_sprite.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
-      <section>
-        <h2>Контакти</h2>
-        <div>
-          <ul>
-            <li>
+      <section class="contacts">
+        <h2 class="section-title">Контакти</h2>
+        <div class="contacts-container">
+          <ul class="contacts-list">
+            <li class="contacts-item">
               <a href="">
                 <img src="" alt="" />
                 <span>Ірпінь, вул. Зарифи Алієвої, 104</span>
