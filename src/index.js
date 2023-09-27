@@ -6,7 +6,7 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 import './index.css';
 import ContactUs from './components/ContactUs/ContactUs';
 
-const contact_us = ReactDOM.createRoot(document.getElementById('concact_us'));
+const contact_us = ReactDOM.createRoot(document.getElementById('contact_us'));
 contact_us.render(
   <React.StrictMode>
     <ContactUs />

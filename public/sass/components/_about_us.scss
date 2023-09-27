@@ -1,7 +1,4 @@
 .about_us {
-  max-width: 1055px;
-  padding: 0 20px;
-  margin: auto;
   margin-bottom: 50px;
 }
 
@@ -17,20 +14,9 @@
   }
 
   &::before {
-    position: absolute;
-    top: 0px;
-    left: calc((50% - 120px));
+    @extend %separator;
 
-    content: '';
-    width: 240px;
-    height: 2px;
-    background: repeating-linear-gradient(
-      to right,
-      transparent 10px,
-      transparent 30px,
-      var(--color-accent) 30px,
-      var(--color-accent) 50px
-    );
+    top: 0px;
   }
 }
 
@@ -43,7 +29,6 @@
   border-radius: 10px;
 
   @media screen and (min-width: 450px) {
-    border-radius: 10px;
     width: 50%;
   }
 }
@@ -61,17 +46,13 @@
 }
 
 .about_us-header {
+  color: var(--color-primary-text2);
   font-size: 16px;
-  line-height: 21px;
   font-weight: 400;
   margin-bottom: 9px;
 
-  font-size: 16px;
-  line-height: 21px;
-
   @media screen and (min-width: 450px) {
     font-size: 20px;
-    line-height: 26px;
     margin-bottom: 23px;
   }
 }
@@ -79,14 +60,10 @@
 .about_us-description {
   color: var(--color-secondary-text);
 
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 300;
   margin-bottom: 41px;
 
   @media screen and (min-width: 800px) {
     font-size: 16px;
-    line-height: 22px;
   }
 }
 
@@ -105,9 +82,18 @@
 
 .about_us-social_item {
   & svg {
+    @extend %site-animation;
+
+    fill: #1d8dcd;
+
     @media screen and (min-width: 600px) {
       width: 52px;
       height: 52px;
+    }
+
+    &:hover,
+    &:focus {
+      fill: var(--color-hover);
     }
   }
 

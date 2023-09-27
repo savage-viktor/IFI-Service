@@ -1,26 +1,15 @@
 .hero {
-  text-align: center;
-
+  width: 350px;
+  max-width: 1080px;
+  margin: 0 auto 34px auto;
+  padding: 82px 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url(../images/background-hero-mob.jpg);
-  background-size: 350px;
-  border-radius: 10px;
-
   background-repeat: no-repeat;
   background-position: center;
-  // background-color: #2f303a;
-
-  padding-top: 82px;
-  padding-bottom: 82px;
-  // padding-left: 46px;
-  // padding-right: 46px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 34px;
-
-  width: 350px;
-  // height: 371px;
-  max-width: 1080px;
+  background-size: 350px;
+  border-radius: 10px;
+  text-align: center;
 
   @media (min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
@@ -31,13 +20,12 @@
 
   @media screen and (min-width: 500px) {
     width: auto;
-    padding-top: 90px;
-    padding-bottom: 90px;
+    padding: 87px 0;
     background-size: 1080px;
     margin-bottom: 49px;
-
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       url(../../images/background-hero.jpg);
+
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
       (min-resolution: 2dppx) {
@@ -48,46 +36,29 @@
 }
 
 .hero .container {
-  padding-left: 46px;
-  padding-right: 46px;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
 .hero__title {
-  // font-family: 'E-Ukraine', sans-serif;
-  color: var(--color-white);
-
-  // font-family: e-Ukraine;
+  width: 258px;
+  margin-bottom: 10px;
   font-size: 20px;
   font-weight: 700;
-  line-height: 26px;
-  letter-spacing: 0em;
-  text-align: center;
-
-  margin-bottom: 10px;
-  width: 100%;
-
+  color: var(--color-white);
+  @media screen and (min-width: 500px) {
+    width: 100%;
+  }
   @media screen and (min-width: 651px) {
-    font-size: 26px;
-    margin-bottom: 23px;
     width: 600px;
+    margin-bottom: 23px;
+    font-size: 26px;
   }
 }
 
 .hero__slogan {
-  color: var(--color-white);
-
-  // font-family: e-Ukraine;
-  font-size: 14px;
+  margin-bottom: 30px;
   font-weight: 400;
-  line-height: 1.28;
-  letter-spacing: 0em;
-  text-align: center;
-
-  margin-bottom: 34px;
+  color: var(--color-white);
   @media screen and (min-width: 651px) {
     font-size: 18px;
   }

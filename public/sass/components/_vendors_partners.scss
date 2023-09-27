@@ -1,12 +1,6 @@
 .vendors,
 .partners {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
   max-width: 930px;
-  margin: auto;
-  padding: 0 15px;
 
   margin-bottom: 53px;
 
@@ -22,6 +16,7 @@
     }
   }
 }
+
 .vendor-list,
 .partner-list {
   display: flex;
@@ -29,7 +24,6 @@
   flex-wrap: wrap;
   margin-bottom: 27px;
   align-items: center;
-  // height: 100px;
   width: 100%;
 
   justify-content: space-around;
@@ -38,24 +32,19 @@
     margin-bottom: 32px;
   }
 }
+
 .vendor-item,
 .partner-item {
   padding: 15px;
-  // width: 100px;
 }
+
 .vendor-image,
 .partner-image {
-  // width: 100%;
+  @extend %site-animation;
+
   height: 30px;
   object-fit: contain;
   fill: rgb(42, 204, 204);
-
-  &.bigger {
-    height: 70px;
-  }
-  &.novatel {
-    height: 60px;
-  }
 
   @media screen and (min-width: 651px) {
     height: 40px;
@@ -65,5 +54,18 @@
     &.novatel {
       height: 70px;
     }
+  }
+
+  &:hover,
+  &:focus {
+    scale: 1.1;
+  }
+
+  &.bigger {
+    height: 70px;
+  }
+
+  &.novatel {
+    height: 60px;
   }
 }

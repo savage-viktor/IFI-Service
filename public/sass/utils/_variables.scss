@@ -1,9 +1,12 @@
 :root {
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-primary-text: #212121;
-  --color-secondary-text: #888787;
-  --color-accent: #1d8dcd;
+  --color-white: #ffffff; /* Usable */
+  --color-black: #000000; /* Site-nav-link*/
+  --color-primary-text1: #2c2c2c; /* Usable */
+  --color-primary-text2: #111111; /* Usable */
+  --color-secondary-text: #888787; /* Usable */
+  --color-accent: #1d8dcd; /* Usable */
+  --color-hover: #4aa4d8; /* Usable */
+
   --color-contact-footer: rgba(255, 255, 255, 0.6);
 
   --effect-time: 250ms;
@@ -18,4 +21,20 @@
 %site-animation {
   transition-duration: var(--effect-time);
   transition-timing-function: var(--effect-function);
-}
+} /* Usable */
+
+%separator {
+  position: absolute;
+  left: calc((50% - 120px));
+
+  content: '';
+  width: 240px;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    transparent 10px,
+    transparent 30px,
+    var(--color-accent) 30px,
+    var(--color-accent) 50px
+  );
+} /* Usable */
