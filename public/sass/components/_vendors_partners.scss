@@ -38,10 +38,18 @@
   padding: 15px;
 }
 
-.vendor-image,
-.partner-image {
+.vendor-link,
+.partner-link {
   @extend %site-animation;
 
+  &:hover,
+  &:focus {
+    scale: 1.1;
+  }
+}
+
+.vendor-image,
+.partner-image {
   height: 30px;
   object-fit: contain;
   fill: rgb(42, 204, 204);
@@ -54,11 +62,6 @@
     &.novatel {
       height: 70px;
     }
-  }
-
-  &:hover,
-  &:focus {
-    scale: 1.1;
   }
 
   &.bigger {

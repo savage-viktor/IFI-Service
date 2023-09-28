@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.6a2420d6.css","mappings":"AAAA,WAEE,YAAa,CACb,qBAAsB,CAFtB,iBAAkB,CAGlB,WACF","sources":["components/ContactUs/ContactUs.css"],"sourcesContent":[".ContactUs {\r\n  text-align: center;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 200px;\r\n}\r\n"],"names":[],"sourceRoot":""}

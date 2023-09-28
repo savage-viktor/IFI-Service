@@ -2,7 +2,11 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  margin-bottom: 75px;
+  margin-bottom: 50px;
+
+  @media screen and (min-width: 651px) {
+    margin-bottom: 75px;
+  }
 
   & .section-title {
     align-self: flex-start;

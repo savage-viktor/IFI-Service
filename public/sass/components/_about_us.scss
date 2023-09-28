@@ -80,9 +80,7 @@
 }
 
 .about_us-social_item {
-  & svg {
-    @extend %site-animation;
-
+  & a {
     fill: #1d8dcd;
 
     @media screen and (min-width: 600px) {
@@ -93,6 +91,13 @@
     &:hover,
     &:focus {
       fill: var(--color-hover);
+    }
+  }
+
+  & svg {
+    @media screen and (min-width: 600px) {
+      width: 52px;
+      height: 52px;
     }
   }
 
