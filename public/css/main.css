@@ -15,6 +15,7 @@
 html {
   line-height: 1.3;
   -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -154,7 +155,7 @@ summary {
   --effect-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.footer-links__link, .footer .contacts-item__link, .contact-us__comment, .contact-us__icon, .contact-us__input, .contacts-item__link, .vendor-link,
+.footer-links__link, .contacts-item-social a, .footer .contacts-item__link, .contact-us__comment, .contact-us__icon, .contact-us__input, .contacts-item__link, .vendor-link,
 .partner-link, .service-item__interfaces-image, .service-item__interfaces-link:hover .service-item__interfaces-image, .service-item__interfaces-link:focus .service-item__interfaces-image, .service-item__interfaces-item, .site-nav__link, .vendor-button,
 .contact-us__button, .hero__button {
   -webkit-transition-duration: var(--effect-time);
@@ -1051,6 +1052,7 @@ img {
 }
 
 #contact_us {
+  position: relative;
   width: 100%;
   padding: 31px 40px 0 40px;
 }
@@ -1244,6 +1246,10 @@ img {
   margin-bottom: 30px;
 }
 
+.footer > a {
+  height: 93px;
+}
+
 .footer .contacts-list {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -1303,6 +1309,25 @@ img {
   .footer-links__nav {
     width: auto;
   }
+}
+
+.contacts-item-social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.contacts-item-social a {
+  fill: var(--color-secondary-text);
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+}
+.contacts-item-social a:hover, .contacts-item-social a:focus {
+  fill: var(--color-accent);
 }
 
 .footer-links__services {

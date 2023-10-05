@@ -6,6 +6,10 @@
   margin-bottom: 30px;
 }
 
+.footer > a {
+  height: 93px;
+}
+
 .footer .contacts-list {
   order: 1;
   display: flex;
@@ -50,6 +54,24 @@
 
   @media screen and (min-width: 700px) {
     width: auto;
+  }
+}
+
+.contacts-item-social {
+  display: flex;
+  flex-direction: row;
+
+  & a {
+    @extend %site-animation;
+
+    fill: var(--color-secondary-text);
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    &:hover,
+    &:focus {
+      fill: var(--color-accent);
+    }
   }
 }
 

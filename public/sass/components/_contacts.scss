@@ -1,3 +1,7 @@
+// #contacts {
+//   @extend %site-animation;
+// }
+
 .contacts {
   flex-direction: row;
   flex-wrap: wrap;
@@ -73,6 +77,7 @@
 }
 
 #contact_us {
+  position: relative;
   width: 100%;
   padding: 31px 40px 0 40px;
 

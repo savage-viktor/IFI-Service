@@ -7,9 +7,24 @@
     <title>IFI Service - Сервісний центр</title>
     <meta
       name="description"
-      content="Ремонт на прошивка роутерів та модемів ZTE, Huawei, Alcatel, Novatel та інших"
+      content="Ремонт, прошивка, розлочка GSM модемів та Wi-Fi роутерів ZTE, Huawei, Alcatel, Novatel, Netgear та інших"
     />
     <link rel="stylesheet" href="./css/main.min.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CR282B8E4Z"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-CR282B8E4Z');
+    </script>
   </head>
 
   <body>
@@ -68,14 +83,18 @@
             IFI Service - сервісний центр GSM роутерів та модемів
           </h1>
           <h2 class="hero__slogan">Довірте своє обладнання професіоналам</h2>
-          <button type="button" class="hero__button">Зв’язатися з нами</button>
+          <a href="#contacts">
+            <button type="button" class="hero__button">
+              Зв’язатися з нами
+            </button>
+          </a>
         </div>
       </section>
 
       <section class="section services">
         <h2 class="section-title">Сервісні послуги</h2>
         <ul class="service-list">
-          <li class="service-item">
+          <li class="service-item" id="hardware">
             <img
               class="service-item__image"
               src="./images/illustration_hadrware.jpg"
@@ -90,7 +109,7 @@
               </p>
             </div>
           </li>
-          <li class="service-item">
+          <li class="service-item" id="software">
             <img
               class="service-item__image"
               src="./images/illustration_software.jpg"
@@ -105,7 +124,7 @@
               </p>
             </div>
           </li>
-          <li class="service-item">
+          <li class="service-item" id="unlock">
             <img
               class="service-item__image"
               src="./images/illustration_unlock.jpg"
@@ -120,7 +139,7 @@
               </p>
             </div>
           </li>
-          <li class="service-item">
+          <li class="service-item" id="antenna">
             <img
               class="service-item__image"
               src="./images/illustration_antenna.jpg"
@@ -134,7 +153,7 @@
               </p>
             </div>
           </li>
-          <li class="service-item">
+          <li class="service-item" id="interface">
             <h3 class="service-item__name">Український інтерфейс</h3>
             <p class="service-item__description">
               Встановлення та розробка веб інтерфейсів та інтерфейсів дисплея
@@ -151,67 +170,17 @@
                   <a class="service-item__interfaces-link" href="">
                     <img
                       class="service-item__interfaces-image"
-                      src="./images/models/novatel_6620l.jpg"
-                      alt=""
-                    />
-                    <p class="service-item__interfaces-model">Novatel 6620</p>
-                  </a>
-                </li>
-                <li class="service-item__interfaces-item">
-                  <a class="service-item__interfaces-link" href="">
-                    <img
-                      class="service-item__interfaces-image"
                       src="./images/models/novatel_2372.jpg"
                       alt=""
                     />
-                    <p class="service-item__interfaces-model">Novatel 8800</p>
+                    <p class="service-item__interfaces-model">Novatel 2372</p>
                   </a>
                 </li>
                 <li class="service-item__interfaces-item">
                   <a class="service-item__interfaces-link" href="">
                     <img
                       class="service-item__interfaces-image"
-                      src="./images/models/zte_ac70.jpg"
-                      alt=""
-                    />
-                    <p class="service-item__interfaces-model">Netgear 791</p></a
-                  >
-                </li>
-                <li class="service-item__interfaces-item">
-                  <a class="service-item__interfaces-link" href="">
-                    <img
-                      class="service-item__interfaces-image"
-                      src="./images/models/zte_ac3633.jpg"
-                      alt=""
-                    />
-                    <p class="service-item__interfaces-model">Netgear 797</p></a
-                  >
-                </li>
-                <li class="service-item__interfaces-item">
-                  <a class="service-item__interfaces-link" href="">
-                    <img
-                      class="service-item__interfaces-image"
-                      src="./images/models/zte_ac70.jpg"
-                      alt=""
-                    />
-                    <p class="service-item__interfaces-model">Netgear 791</p></a
-                  >
-                </li>
-                <li class="service-item__interfaces-item">
-                  <a class="service-item__interfaces-link" href="">
-                    <img
-                      class="service-item__interfaces-image"
-                      src="./images/models/zte_ac3633.jpg"
-                      alt=""
-                    />
-                    <p class="service-item__interfaces-model">Netgear 797</p></a
-                  >
-                </li>
-                <li class="service-item__interfaces-item">
-                  <a class="service-item__interfaces-link" href="">
-                    <img
-                      class="service-item__interfaces-image"
-                      src="./images/models/novatel_6620l.jpg"
+                      src="./images/models/novatel_6620.jpg"
                       alt=""
                     />
                     <p class="service-item__interfaces-model">Novatel 6620</p>
@@ -221,11 +190,53 @@
                   <a class="service-item__interfaces-link" href="">
                     <img
                       class="service-item__interfaces-image"
-                      src="./images/models/zte_ac3633.jpg"
+                      src="./images/models/novatel_7730.jpg"
                       alt=""
                     />
-                    <p class="service-item__interfaces-model">Netgear 797</p>
+                    <p class="service-item__interfaces-model">Novatel 7730</p>
                   </a>
+                </li>
+                <li class="service-item__interfaces-item">
+                  <a class="service-item__interfaces-link" href="">
+                    <img
+                      class="service-item__interfaces-image"
+                      src="./images/models/novatel_8800.jpg"
+                      alt=""
+                    />
+                    <p class="service-item__interfaces-model">
+                      Novatel 8800
+                    </p></a
+                  >
+                </li>
+                <li class="service-item__interfaces-item">
+                  <a class="service-item__interfaces-link" href="">
+                    <img
+                      class="service-item__interfaces-image"
+                      src="./images/models/netgear_791.jpg"
+                      alt=""
+                    />
+                    <p class="service-item__interfaces-model">Netgear 791</p></a
+                  >
+                </li>
+                <li class="service-item__interfaces-item">
+                  <a class="service-item__interfaces-link" href="">
+                    <img
+                      class="service-item__interfaces-image"
+                      src="./images/models/netgear_797.jpg"
+                      alt=""
+                    />
+                    <p class="service-item__interfaces-model">Netgear 797</p></a
+                  >
+                </li>
+                <li class="service-item__interfaces-item">
+                  <a class="service-item__interfaces-link" href="">
+                    <img
+                      class="service-item__interfaces-image"
+                      src="./images/models/netgear_815.jpg"
+                      alt=""
+                    />
+                    <p class="service-item__interfaces-model">Netgear 815</p></a
+                  >
                 </li>
               </ul>
             </div>
@@ -295,7 +306,11 @@
         </p>
         <ul class="partner-list">
           <li class="partner-item">
-            <a class="partner-link" href="">
+            <a
+              class="partner-link"
+              target="”_blank”"
+              href="https://3g-digger.com"
+            >
               <img
                 class="partner-image"
                 src="./images/patrners/3gdigger.png"
@@ -304,7 +319,11 @@
             </a>
           </li>
           <li class="partner-item">
-            <a class="partner-link" href="">
+            <a
+              class="partner-link"
+              target="”_blank”"
+              href="https://www.4g.kiev.ua"
+            >
               <img
                 class="partner-image"
                 src="./images/patrners/4gkiev.png"
@@ -314,7 +333,11 @@
           </li>
 
           <li class="partner-item">
-            <a class="partner-link" href="">
+            <a
+              class="partner-link"
+              target="”_blank”"
+              href="https://center5g.com.ua/"
+            >
               <img
                 class="partner-image"
                 src="./images/patrners/center5g.png"
@@ -324,7 +347,11 @@
           </li>
 
           <li class="partner-item">
-            <a class="partner-link" href="">
+            <a
+              class="partner-link"
+              target="”_blank”"
+              href="https://goodok.com.ua/"
+            >
               <img
                 class="partner-image"
                 src="./images/patrners/goodok.png"
@@ -333,7 +360,11 @@
             </a>
           </li>
           <li class="partner-item">
-            <a class="partner-link" href="">
+            <a
+              class="partner-link"
+              target="”_blank”"
+              href="https://itcentre.net.ua/"
+            >
               <img
                 class="partner-image"
                 src="./images/patrners/itcentre.png"
@@ -342,7 +373,11 @@
             </a>
           </li>
           <li class="partner-item">
-            <a class="partner-link" href="">
+            <a
+              class="partner-link"
+              target="”_blank”"
+              href="https://www.mobirator.com.ua/"
+            >
               <img
                 class="vendor-image"
                 src="./images/patrners/mobirator.png"
@@ -351,7 +386,11 @@
             </a>
           </li>
           <li class="partner-item">
-            <a class="partner-link" href="">
+            <a
+              class="partner-link"
+              target="”_blank”"
+              href="https://mobitech.com.ua/"
+            >
               <img
                 class="partner-image"
                 src="./images/patrners/mobitech.png"
@@ -381,14 +420,17 @@
             </p>
             <ul class="about_us-social">
               <li class="about_us-social_item">
-                <a href="">
+                <a href="https://www.facebook.com/dykunviktor/" target="_blank">
                   <svg width="35px" height="35px">
                     <use href="./images/icons_sprite.svg#icon-facebook"></use>
                   </svg>
                 </a>
               </li>
               <li class="about_us-social_item">
-                <a href="">
+                <a
+                  href="https://www.instagram.com/viktordykun/"
+                  target="_blank"
+                >
                   <svg width="35px" height="35px">
                     <use href="./images/icons_sprite.svg#icon-instagram"></use>
                   </svg>
@@ -399,12 +441,16 @@
         </div>
       </section>
 
-      <section class="section contacts">
+      <section id="contacts" class="section contacts">
         <h2 class="section-title">Контакти</h2>
         <div class="contacts-container">
           <ul class="contacts-list">
             <li class="contacts-item">
-              <a class="contacts-item__link" href="">
+              <a
+                class="contacts-item__link"
+                href="https://maps.app.goo.gl/T4SX7Bp6rJJaYVnx6"
+                target="_blank"
+              >
                 <svg class="contacts-item__icon" width="18px" height="24px">
                   <use href="./images/icons_sprite.svg#icon-address"></use>
                 </svg>
@@ -457,24 +503,32 @@
       </ul>
       <ul class="footer-links__services">
         <li class="footer-links__item">
-          <a class="footer-links__link" href=""> Ремонт </a>
+          <a class="footer-links__link" href="#hardware"> Ремонт </a>
         </li>
         <li class="footer-links__item">
-          <a class="footer-links__link" href=""> Прошивка </a>
+          <a class="footer-links__link" href="#software"> Прошивка </a>
         </li>
         <li class="footer-links__item">
-          <a class="footer-links__link" href=""> Розблокування </a>
+          <a class="footer-links__link" href="#unlock"> Розблокування </a>
         </li>
         <li class="footer-links__item">
-          <a class="footer-links__link" href=""> Перепайка під антену </a>
+          <a class="footer-links__link" href="#antenna">
+            Перепайка під антену
+          </a>
         </li>
         <li class="footer-links__item">
-          <a class="footer-links__link" href=""> Український інтерфейс </a>
+          <a class="footer-links__link" href="#interface">
+            Український інтерфейс
+          </a>
         </li>
       </ul>
       <ul class="contacts-list">
         <li class="contacts-item">
-          <a class="contacts-item__link" href="">
+          <a
+            class="contacts-item__link"
+            href="https://maps.app.goo.gl/T4SX7Bp6rJJaYVnx6"
+            target="_blank"
+          >
             <svg class="contacts-item__icon" width="17px" height="19px">
               <use href="./images/icons_sprite.svg#icon-address"></use>
             </svg>
@@ -496,6 +550,25 @@
             </svg>
             <span>+38 (093) 416-27-50</span>
           </a>
+        </li>
+
+        <li class="contacts-item">
+          <ul class="contacts-item-social">
+            <li class="contacts-item-social_item">
+              <a href="https://www.facebook.com/ifiservice" target="_blank">
+                <svg width="35px" height="35px">
+                  <use href="./images/icons_sprite.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="contacts-item-social_item">
+              <a href="https://www.instagram.com/ifiservice/" target="_blank">
+                <svg width="35px" height="35px">
+                  <use href="./images/icons_sprite.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
     </footer>

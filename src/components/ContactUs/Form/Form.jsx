@@ -18,11 +18,6 @@ function Form({ onSubmit }) {
   const [email, setEmail] = useLocalStorage('email', '');
   const [message, setMessage] = useLocalStorage('message', '');
 
-  //   useEffect(() => {
-  //     console.log('set local');
-  //     localStorage.setItem('name', name);
-  //   }, [name]);
-
   const handleInput = ({ target: { name, value } }) => {
     switch (name) {
       case 'name':
@@ -59,10 +54,11 @@ function Form({ onSubmit }) {
     <form class="contact-us__form" onSubmit={handleSubmit}>
       <label class="contact-us__input-label">
         <input
+          required
           class="contact-us__input"
           type="text"
           name="name"
-          placeholder="Введіть імя"
+          placeholder="Введіть ім'я"
           value={name}
           onInput={handleInput}
         />
@@ -72,8 +68,10 @@ function Form({ onSubmit }) {
       </label>
       <label class="contact-us__input-label">
         <input
+          required
           class="contact-us__input"
-          type="phone"
+          type="tel"
+          // pattern="^\+[0-9]{3}\s\((\d+)\)-\d{3}-\d{2}-\d{2}"
           name="phone"
           placeholder="Введіть телефон"
           value={phone}
@@ -85,6 +83,7 @@ function Form({ onSubmit }) {
       </label>
       <label class="contact-us__input-label">
         <input
+          required
           class="contact-us__input"
           type="email"
           name="email"
@@ -98,6 +97,7 @@ function Form({ onSubmit }) {
       </label>
 
       <textarea
+        required
         class="contact-us__comment"
         type="text"
         name="message"
