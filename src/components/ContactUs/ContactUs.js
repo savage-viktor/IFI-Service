@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Form from './Form/Form';
 import Overlay from './Overlay/Overlay';
-import Loader from './Loader/Loader';
+import Loader from '../Loader/Loader';
 
 function ContactUs() {
   const [status, setStatus] = useState('idle');
