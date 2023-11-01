@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IFI Service - Admin page</title>
+
+    <link rel="stylesheet" href="./css/main.min.css" />
+
+    <link href="/static/css/main.af1eb2e3.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header class="container">
+      <nav class="site-nav">
+        <a href="./index.html">
+          <img height="93px" src="./images/IFI_LOGO4x.png" alt="" />
+        </a>
+        <button
+          class="menu-toggle js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="page-header__menu-icon" width="46px" height="32px">
+            <use href="./images/icons_sprite.svg#icon-menu"></use>
+          </svg>
+        </button>
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link site-nav__link--active" href="./index.html"
+              >Головна</a
+            >
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="./software_solutions.html"
+              >Програмні рішення</a
+            >
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="./hardware_repair.html"
+              >Апаратний ремонт</a
+            >
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="./shop.html">Магазин</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="./contacts.html">Контакти</a>
+          </li>
+        </ul>
+
+        <div class="menu-container js-menu-container" id="mobile-menu">
+          <button class="menu-toggle js-close-menu">
+            <svg class="page-header__menu-icon" width="46px" height="32px">
+              <use href="./images/icons_sprite.svg#icon-menu-close"></use>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <div id="admin-page"></div>
+    <div id="modal"></div>
+    <div id="modal-confirm"></div>
+  </body>
+</html>

@@ -1,13 +1,17 @@
+import { BrowserRouter } from 'react-router-dom';
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
+import AdminPageApp from './components/AdminPageApp/AdminPageApp';
 // import ContactUs from './components/ContactUs/ContactUs';
-
 // import SoftwareSolutions from './components/SoftwareSolutions/SoftwareSolutions';
+// import VendorModels from './components/VendorModels/VendorModels';
+// import ModelServices from './components/ModelServices/ModelServices';
 
-import VendorModels from './components/VendorModels/VendorModels';
+const admin_page = ReactDOM.createRoot(document.getElementById('admin-page'));
 
 // const contact_us = ReactDOM.createRoot(document.getElementById('contact_us'));
 
@@ -15,13 +19,27 @@ import VendorModels from './components/VendorModels/VendorModels';
 //   document.getElementById('software_solutions-app')
 // );
 
-const vendor_models = ReactDOM.createRoot(
-  document.getElementById('vendor-models')
-);
+// const vendor_models = ReactDOM.createRoot(
+//   document.getElementById('vendor-models')
+// );
+// const vendorName = document
+//   .getElementById('vendor-models')
+//   .getAttribute('vendor-name');
 
-const vendorName = document
-  .getElementById('vendor-models')
-  .getAttribute('vendor-name');
+// const model_services = ReactDOM.createRoot(
+//   document.getElementById('model-services')
+// );
+// const modelName = document
+//   .getElementById('model-services')
+//   .getAttribute('model-name');
+
+admin_page.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <AdminPageApp />
+    </BrowserRouter>
+  </React.StrictMode>
+);
 
 // contact_us.render(
 //   <React.StrictMode>
@@ -35,11 +53,11 @@ const vendorName = document
 //   </React.StrictMode>
 // );
 
-vendor_models.render(
-  <React.StrictMode>
-    <VendorModels vendorName={vendorName} />
-  </React.StrictMode>
-);
+// model_services.render(
+//   <React.StrictMode>
+//     <ModelServices modelName={modelName} />
+//   </React.StrictMode>
+// );
 
 // Mobile menu
 (() => {

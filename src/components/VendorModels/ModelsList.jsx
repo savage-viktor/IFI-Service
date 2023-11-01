@@ -6,9 +6,13 @@ function ModelsList({ models }) {
           <li key={model.id} class="vendor-model-item">
             <a
               class="vendor-model-link"
-              href={model.model.split(' ').join('').toLowerCase()}
+              href={model.model.split(' ').join('').toLowerCase() + '.html'}
             >
-              <img class="vendor-model-image" src={model.image} alt="" />
+              <img
+                class="vendor-model-image"
+                src={model.image}
+                alt={model.model}
+              />
               <p class="vendor-model-name">{model.model}</p>
             </a>
             <div class="vendor-model__container-table">

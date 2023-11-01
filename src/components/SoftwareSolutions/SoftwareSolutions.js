@@ -4,7 +4,7 @@ import FilterButtons from './FilterButtons/FilterButtons';
 import Loader from '../Loader/Loader';
 import Error from './Error/Error';
 
-const services = [
+const services2 = [
   'Ремонт антенних роз`ємів',
   'Ремонт SIM приймача',
   'Ремонт приймача мережі',
@@ -15,13 +15,23 @@ const services = [
   'Заміна мікросхеми пам`яті',
 ];
 
+const services = [
+  'Встановлення українського інтерфейсу',
+  'Відновлення прошивок',
+  'Зміна та модифікація прошивок',
+  'Розлочка від операторів',
+  'Відновлення заводських налаштувань',
+  'Зміна IMEI',
+  'Відкриття частот',
+];
+
 function SoftwareSolutions() {
   const [status, setStatus] = useState('idle');
   const [models, setModels] = useState(false);
 
   // const [filter, setFilter] = useState('Укранський інтерфейс');
   const [activeService, setActiveService] = useState(
-    'Ремонт антенних роз`ємів'
+    'Встановлення українського інтерфейсу'
   );
 
   useEffect(() => {

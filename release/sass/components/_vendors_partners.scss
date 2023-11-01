@@ -17,6 +17,10 @@
   }
 }
 
+.vendors {
+  max-width: 1200px;
+}
+
 .vendor-list,
 .partner-list {
   display: flex;
@@ -52,7 +56,8 @@
 .partner-image {
   height: 30px;
   object-fit: contain;
-  fill: rgb(42, 204, 204);
+  // fill: rgb(42, 204, 204);
+  fill: #0099ff;
 
   @media screen and (min-width: 651px) {
     height: 40px;

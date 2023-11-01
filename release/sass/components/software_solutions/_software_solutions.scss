@@ -236,12 +236,17 @@
   @extend %site-animation;
   cursor: pointer;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
   min-height: 60px;
   border-radius: 88px;
   border: 1px solid var(--color-accent);
   background-color: var(--color-white);
   color: var(--color-accent);
+  text-align: center;
 
   padding: 16px 10px;
   margin-bottom: 10px;
@@ -316,8 +321,8 @@
   margin-bottom: 20px;
 
   display: block;
-  height: 70%;
   width: 70%;
+  height: 100px;
 
   object-fit: contain;
 }

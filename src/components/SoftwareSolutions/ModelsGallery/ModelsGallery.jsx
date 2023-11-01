@@ -26,9 +26,7 @@ function ModelsGallery({ models, activeService }) {
                 src={model.image}
                 alt={model.model}
               />
-              <p class="models-gallery-model">
-                {model.vendor} {model.model}
-              </p>
+              <p class="models-gallery-model">{model.model}</p>
             </a>
           </li>
         );
