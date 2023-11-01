@@ -1,28 +1,58 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 
 import SubmitModel from '../../../../services/SubmitModel';
+import EditModel from '../../../../services/EditModel';
 import AddServiceForm from '../AddServiceForm/AddServiceForm';
 
 import styles from './AddModelForm.module.css';
 import { useState } from 'react';
 
-let initialModel = {
-  vendor: '',
-  model: '',
-  image: '',
+// let initialModel = {
+//   vendor: '',
+//   model: '',
+//   image: '',
 
-  type: '',
-  typeOfSim: '',
-  size: '',
-  battery: '',
-  bands: '',
-  antena: '',
-  wifi: '',
-  mobileNetwork: '',
+//   type: {editModel.services || ""},
+//   typeOfSim: '',
+//   size: '',
+//   battery: '',
+//   bands: '',
+//   antena: '',
+//   wifi: '',
+//   mobileNetwork: '',
+// };
+const flatObject = obj => {
+  function flat(o) {
+    return Object.entries(o).flatMap(([key, val]) => {
+      if (typeof val === 'object') return flat(val);
+
+      return [[key, val]];
+    });
+  }
+
+  return Object.fromEntries(flat(obj));
 };
 
-function AddModelForm() {
-  const [services, setServices] = useState([]);
+function AddModelForm({ editModel }) {
+  console.log(editModel);
+  console.log(flatObject(editModel));
+
+  let initialModel = {
+    vendor: '',
+    model: '',
+    image: '',
+
+    type: ``,
+    typeOfSim: '',
+    size: '',
+    battery: '',
+    bands: '',
+    antena: '',
+    wifi: '',
+    mobileNetwork: '',
+  };
+
+  const [services, setServices] = useState(editModel.services || []);
   const handleSubmit = values => {
     const {
       vendor,
@@ -55,7 +85,7 @@ function AddModelForm() {
       services,
     };
     console.log('Hello', addingModel, services);
-    SubmitModel(addingModel);
+    editModel ? EditModel(addingModel, editModel.id) : SubmitModel(addingModel);
   };
 
   const handleAddService = ({ serviceName, serviceDescription }) => {
@@ -72,7 +102,7 @@ function AddModelForm() {
     <div className={styles.section}>
       <Formik
         // validationSchema="erg"
-        initialValues={initialModel}
+        initialValues={editModel ? flatObject(editModel) : initialModel}
         onSubmit={handleSubmit}
       >
         <Form autoComplete="off" className={styles.form}>
@@ -142,7 +172,7 @@ function AddModelForm() {
               </label>
 
               <label className={styles.label}>
-                Розмір
+                Розмір, мм
                 <Field
                   className={styles.field}
                   name="size"
@@ -169,7 +199,7 @@ function AddModelForm() {
               </label>
 
               <label className={styles.label}>
-                Антена
+                Антенний роз'єм
                 <Field
                   className={styles.field}
                   name="antena"

@@ -36,6 +36,7 @@ import ModalConfirm from '../components/ModalConfirm/ModalConfirm';
 function Models() {
   const [status, setStatus] = useState('idle');
   const [models, setModels] = useState(false);
+  const [model, setModel] = useState(false);
   const [modal, setModal] = useState(false);
   const [modalConfirm, setModalConfirm] = useState(false);
   const [update, setUpdate] = useState(1);
@@ -51,19 +52,16 @@ function Models() {
 
   const handleCloseModal = () => {
     setModal(false);
+    setModel(false);
   };
 
   const handleCloseModalConfirm = () => {
     setModalConfirm(false);
   };
 
-  // const handleDeleteModel = () => {
-  //   DeleteModel();
-  // };
-
   const handleEditModel = model => {
-    console.log('Edit', model);
-    EditModel(model);
+    setModel(model);
+    setModal(true);
   };
 
   const handleDeleteModel = async id => {
@@ -84,7 +82,7 @@ function Models() {
 
       {modal && (
         <Modal onClose={handleCloseModal}>
-          <AddModelForm />
+          <AddModelForm editModel={model} />
         </Modal>
       )}
 

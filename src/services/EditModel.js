@@ -1,6 +1,6 @@
-const EditModel = model => {
+const EditModel = (model, id) => {
   fetch(
-    `https://6519e0a5340309952f0cc472.mockapi.io/api/ifiservice/Models/${model.id}`,
+    `https://6519e0a5340309952f0cc472.mockapi.io/api/ifiservice/Models/${id}`,
     {
       method: 'PUT',
       headers: { 'content-type': 'application/json' },
