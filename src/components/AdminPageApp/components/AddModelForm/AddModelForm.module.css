@@ -99,3 +99,8 @@
   width: 218px;
   height: 48px;
 }
+
+.serviceList {
+  display: flex;
+  flex-direction: column;
+}

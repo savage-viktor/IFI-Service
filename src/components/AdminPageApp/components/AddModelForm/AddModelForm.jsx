@@ -1,108 +1,75 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { GetServices } from '../../../../services/ServicesAPI';
 
-import SubmitModel from '../../../../services/SubmitModel';
-import EditModel from '../../../../services/EditModel';
-import AddServiceForm from '../AddServiceForm/AddServiceForm';
+import SelectService from '../SelectService/SelectService';
 
 import styles from './AddModelForm.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-// let initialModel = {
-//   vendor: '',
-//   model: '',
-//   image: '',
-
-//   type: {editModel.services || ""},
-//   typeOfSim: '',
-//   size: '',
-//   battery: '',
-//   bands: '',
-//   antena: '',
-//   wifi: '',
-//   mobileNetwork: '',
-// };
-const flatObject = obj => {
-  function flat(o) {
-    return Object.entries(o).flatMap(([key, val]) => {
-      if (typeof val === 'object') return flat(val);
-
-      return [[key, val]];
-    });
-  }
-
-  return Object.fromEntries(flat(obj));
+const availableServiceOptions = serviceOptions => {
+  const options = [];
+  serviceOptions.map(serviceOption => options.push(serviceOption.description));
+  console.log(options);
+  return options;
 };
 
-function AddModelForm({ editModel }) {
-  console.log(editModel);
-  console.log(flatObject(editModel));
+function AddModelForm({ model, onSubmit }) {
+  const [services, setServices] = useState(model.services);
+  const [service, setService] = useState();
+  const [serviceOptions, setServiceOptions] = useState([]);
 
-  let initialModel = {
-    vendor: '',
-    model: '',
-    image: '',
+  useEffect(() => {
+    GetServices()
+      .then(services => {
+        setServiceOptions(services);
+      })
+      .catch();
+  }, []);
 
-    type: ``,
-    typeOfSim: '',
-    size: '',
-    battery: '',
-    bands: '',
-    antena: '',
-    wifi: '',
-    mobileNetwork: '',
+  const handleInputService = value => {
+    console.log(value);
+    setService(value);
   };
 
-  const [services, setServices] = useState(editModel.services || []);
   const handleSubmit = values => {
-    const {
-      vendor,
-      model,
-      type,
-      typeOfSim,
-      size,
-      battery,
-      bands,
-      antena,
-      wifi,
-      mobileNetwork,
-    } = values;
-
-    const addingModel = {
-      vendor,
-      model,
-      image:
-        './images/models/' + model.split(' ').join('_').toLowerCase() + '.jpg',
-      details: {
-        type,
-        typeOfSim,
-        size,
-        battery,
-        bands,
-        antena,
-        wifi,
-        mobileNetwork,
-      },
-      services,
-    };
-    console.log('Hello', addingModel, services);
-    editModel ? EditModel(addingModel, editModel.id) : SubmitModel(addingModel);
+    values.services = services;
+    onSubmit(values);
   };
 
-  const handleAddService = ({ serviceName, serviceDescription }) => {
-    console.log(serviceName, serviceDescription);
-    setServices(prevServices => {
-      return [
-        ...prevServices,
-        { name: serviceName, description: serviceDescription },
-      ];
+  const handleAddService = () => {
+    if (services.length === 0) {
+      setServices(prevServices => {
+        return [...prevServices, service];
+      });
+      return;
+    }
+
+    let isService = false;
+    services.map(s => {
+      if (s.id === service.id) {
+        isService = true;
+      }
     });
+
+    !isService &&
+      setServices(prevServices => {
+        return [...prevServices, service];
+      });
+    // setServices(prevServices => {
+    //   return [...prevServices, service];
+    // });
+    // setService('');
+  };
+
+  const deleteService = index => {
+    setServices(services.filter((service, i) => i !== index));
   };
 
   return (
     <div className={styles.section}>
       <Formik
         // validationSchema="erg"
-        initialValues={editModel ? flatObject(editModel) : initialModel}
+        initialValues={model}
         onSubmit={handleSubmit}
       >
         <Form autoComplete="off" className={styles.form}>
@@ -112,6 +79,10 @@ function AddModelForm({ editModel }) {
                 <label className={styles.label}>
                   Виробник
                   <Field className={styles.field} as="select" name="vendor">
+                    <option value="" disabled hidden>
+                      Виберіть виробника
+                    </option>
+
                     <option className={styles.option} value="Novatel">
                       Novatel
                     </option>
@@ -128,7 +99,7 @@ function AddModelForm({ editModel }) {
                       Alcatel
                     </option>
                     <option className={styles.option} value="Other">
-                      Other
+                      Інший виробник
                     </option>
                   </Field>
                 </label>
@@ -144,10 +115,31 @@ function AddModelForm({ editModel }) {
               <div className={styles.servicesBox}>
                 <span>Сервісні послуги</span>
                 <div>
-                  {services.length !== 0 &&
-                    services.map(service => {
-                      return service.name + service.description;
-                    })}
+                  <SelectService
+                    onChange={handleInputService}
+                    options={serviceOptions}
+                  />
+                  <button type="button" onClick={handleAddService}>
+                    Додати
+                  </button>
+                  <div className={styles.serviceList}>
+                    {services.length !== 0 &&
+                      services.map((service, index) => {
+                        return (
+                          <div key={service.id}>
+                            <span>{service.label}</span>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                deleteService(index);
+                              }}
+                            >
+                              Delete
+                            </button>
+                          </div>
+                        );
+                      })}
+                  </div>
                 </div>
               </div>
             </div>
@@ -157,7 +149,7 @@ function AddModelForm({ editModel }) {
                 Тип пристрою
                 <Field
                   className={styles.field}
-                  name="type"
+                  name="details.type"
                   placeholder="Тип пристрою"
                 />
               </label>
@@ -166,7 +158,7 @@ function AddModelForm({ editModel }) {
                 Тип SIM карти
                 <Field
                   className={styles.field}
-                  name="typeOfSim"
+                  name="details.typeOfSim"
                   placeholder="Тип SIM карти"
                 />
               </label>
@@ -175,7 +167,7 @@ function AddModelForm({ editModel }) {
                 Розмір, мм
                 <Field
                   className={styles.field}
-                  name="size"
+                  name="details.size"
                   placeholder="Розмір"
                 />
               </label>
@@ -184,7 +176,7 @@ function AddModelForm({ editModel }) {
                 Акумулятор
                 <Field
                   className={styles.field}
-                  name="battery"
+                  name="details.battery"
                   placeholder="Акумулятор"
                 />
               </label>
@@ -193,7 +185,7 @@ function AddModelForm({ editModel }) {
                 Частоти
                 <Field
                   className={styles.field}
-                  name="bands"
+                  name="details.bands"
                   placeholder="Частоти"
                 />
               </label>
@@ -202,7 +194,7 @@ function AddModelForm({ editModel }) {
                 Антенний роз'єм
                 <Field
                   className={styles.field}
-                  name="antena"
+                  name="details.antena"
                   placeholder="Антена"
                 />
               </label>
@@ -211,7 +203,7 @@ function AddModelForm({ editModel }) {
                 Wi-Fi
                 <Field
                   className={styles.field}
-                  name="wifi"
+                  name="details.wifi"
                   placeholder="Wi-Fi"
                 />
               </label>
@@ -220,7 +212,7 @@ function AddModelForm({ editModel }) {
                 Мобільна мережа
                 <Field
                   className={styles.field}
-                  name="mobileNetwork"
+                  name="details.mobileNetwork"
                   placeholder="Мобільна мережа"
                 />
               </label>
@@ -232,7 +224,7 @@ function AddModelForm({ editModel }) {
           </button>
         </Form>
       </Formik>
-      <AddServiceForm handleAddService={handleAddService} />
+      {/* <AddServiceForm handleAddService={handleAddService} /> */}
     </div>
   );
 }
