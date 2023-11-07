@@ -32,8 +32,23 @@ function AddModelForm({ model, onSubmit }) {
   };
 
   const handleSubmit = values => {
+    values.image = `./images/models/${values.model
+      .split(' ')
+      .join('_')
+      .toLowerCase()}.jpg`;
     values.services = services;
     onSubmit(values);
+  };
+
+  const handleIsPage = event => {
+    setServices(prevServices => {
+      return prevServices.map(prevService => {
+        if (event.target.name === prevService.label) {
+          return { ...prevService, ...{ isPage: !prevService.isPage } };
+        }
+        return prevService;
+      });
+    });
   };
 
   const handleAddService = () => {
@@ -128,6 +143,13 @@ function AddModelForm({ model, onSubmit }) {
                         return (
                           <div key={service.id}>
                             <span>{service.label}</span>
+                            <input
+                              type="checkbox"
+                              checked={service.isPage}
+                              onChange={handleIsPage}
+                              name={service.label}
+                              // id={service.id}
+                            />
                             <button
                               type="button"
                               onClick={() => {

@@ -5,20 +5,20 @@ import Loader from '../Loader/Loader';
 import Error from './Error/Error';
 
 const services2 = [
-  'Ремонт антенних роз`ємів',
+  "Ремонт антенних роз'ємів",
   'Ремонт SIM приймача',
   'Ремонт приймача мережі',
   'Перепайка під антену',
   'Ремонт кнопки ввімкнення',
-  'Ремонт роз`єму USB',
+  "Ремонт роз'єму USB",
   'Ремонт ланцюга живлення',
-  'Заміна мікросхеми пам`яті',
+  "Заміна мікросхеми пам'яті",
 ];
 
 const services = [
   'Встановлення українського інтерфейсу',
-  'Відновлення прошивок',
-  'Зміна та модифікація прошивок',
+  'Відновлення прошивки',
+  'Зміна та модифікація прошивки',
   'Розлочка від операторів',
   'Відновлення заводських налаштувань',
   'Зміна IMEI',
@@ -44,16 +44,13 @@ function SoftwareSolutions() {
         if (res.ok) {
           return res.json();
         }
-        // handle error
         setStatus('error');
       })
       .then(tasks => {
-        // Do something with the list of tasks
         setModels(tasks);
         setStatus('idle');
       })
       .catch(error => {
-        // handle error
         setStatus('error');
       });
   }, []);
@@ -62,7 +59,7 @@ function SoftwareSolutions() {
     ? models.filter(model => {
         let x = false;
         model.services.map(service => {
-          if (service.description === activeService) {
+          if (service.label === activeService) {
             x = true;
           }
         });

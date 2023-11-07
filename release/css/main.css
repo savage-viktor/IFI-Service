@@ -1706,9 +1706,6 @@ img {
     margin-bottom: 30px;
   }
 }
-.vendor-logos-div > .vendor-logo {
-  margin-bottom: 20px;
-}
 
 .vendor-description {
   text-align: center;
@@ -1849,6 +1846,10 @@ img {
 
 .vendor-model__container-table:hover {
   padding-bottom: 300px;
+}
+
+#admin-page .vendor-model__container-table:hover {
+  padding-bottom: 400px;
 }
 
 .model {

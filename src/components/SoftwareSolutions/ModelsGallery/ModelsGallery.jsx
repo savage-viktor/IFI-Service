@@ -2,24 +2,27 @@ function ModelsGallery({ models, activeService }) {
   return (
     <ul class="models-gallery-list">
       {models.map(model => {
-        let serviceIndex = 0;
+        let isPage = false;
 
-        model.services.map((service, index) => {
-          if (service.name === activeService) {
-            serviceIndex = index;
+        model.services.map(service => {
+          if (service.label === activeService) {
+            isPage = service.isPage;
           }
-          return 0;
         });
-
-        const isPage = model.services[serviceIndex].page === '' ? false : true;
 
         return (
           <li class="models-gallery-item" key={model.id}>
             <a
-              class={
-                isPage ? ' models-gallery-link' : 'models-gallery-link disabled'
+              class="models-gallery-link"
+              href={
+                isPage
+                  ? `${model.model.split(' ').join('').toLowerCase()}_${
+                      model.services.find(
+                        service => service.label === activeService
+                      ).page
+                    }.html`
+                  : false
               }
-              href={model.services[serviceIndex].page}
             >
               <img
                 class="models-gallery-image"

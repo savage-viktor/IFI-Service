@@ -38,3 +38,15 @@ export const GetServices = async () => {
   const services = await response.json();
   return services;
 };
+
+export const DeleteService = async id => {
+  const response = await fetch(
+    `https://6547fc62902874dff3acea00.mockapi.io/ifiservice/Services/${id}`,
+    {
+      method: 'DELETE',
+    }
+  );
+
+  const deletedService = await response.json();
+  return deletedService;
+};

@@ -90,11 +90,15 @@ function ModelServices({ modelName }) {
                   <li class="filter-button-item">
                     <a
                       class="filter-button"
-                      href={`${model.model.split(' ').join('')}_${
-                        service.page
-                      }.html`.toLowerCase()}
+                      href={
+                        service.isPage
+                          ? `${model.model.split(' ').join('').toLowerCase()}_${
+                              service.page
+                            }.html`
+                          : false
+                      }
                     >
-                      {service.description}
+                      {service.label}
                     </a>
                   </li>
                 );
