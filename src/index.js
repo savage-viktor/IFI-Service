@@ -53,6 +53,12 @@ admin_page.render(
 //   </React.StrictMode>
 // );
 
+// vendor_models.render(
+//   <React.StrictMode>
+//     <VendorModels vendorName={vendorName} />
+//   </React.StrictMode>
+// );
+
 // model_services.render(
 //   <React.StrictMode>
 //     <ModelServices modelName={modelName} />

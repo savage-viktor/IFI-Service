@@ -3,10 +3,6 @@ function ModelsList({ models, onEdit, onDelete }) {
     firstModel.model.localeCompare(secondModel.model)
   );
 
-  const onClick = () => {
-    console.log('click');
-  };
-
   return (
     <ul class="vendor-model-list">
       {sortedModels.map(model => {

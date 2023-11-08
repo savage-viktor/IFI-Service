@@ -14,6 +14,7 @@ import Error from '../../Error/Error';
 
 import ModelsList from '../components/ModelList/ModelList';
 
+import FindInput from '../components/FindInput/FindInput';
 import AddModelBtn from '../components/AddModelBtn/AddModelBtn';
 import AddModelForm from '../components/AddModelForm/AddModelForm';
 import Modal from '../components/Modal/Modal';
@@ -46,6 +47,7 @@ function Models() {
   const [modalConfirmText, setModalConfirmText] = useState('');
   const [modalConfirmType, setModalConfirmType] = useState('');
   const [deleteId, setDeleteId] = useState('');
+  const [findModel, setFindModel] = useState('');
 
   const [update, setUpdate] = useState(1);
 
@@ -191,6 +193,12 @@ function Models() {
     setModalConfirm(true);
   };
 
+  const filtereModels = models => {
+    return models.filter(model => {
+      return model.model.toLowerCase().includes(findModel);
+    });
+  };
+
   return (
     <div className={styles.section}>
       <ToastContainer
@@ -205,9 +213,8 @@ function Models() {
         pauseOnHover
         theme="colored"
       />
-
+      <FindInput onChange={setFindModel} />
       <AddModelBtn onClick={handleOpenModal} />
-
       {modal && (
         <Modal onClose={handleCloseModal}>
           <AddModelForm
@@ -216,7 +223,6 @@ function Models() {
           />
         </Modal>
       )}
-
       {modalConfirm && (
         <ModalConfirm onClose={handleCloseModalConfirm}>
           <Confirm
@@ -226,12 +232,11 @@ function Models() {
           />
         </ModalConfirm>
       )}
-
       {status === 'loading' && <Loader />}
       {status === 'error' && <Error />}
       {models && (
         <ModelsList
-          models={models}
+          models={filtereModels(models)}
           onEdit={handleEditModel}
           onDelete={handleDeleteModel}
         />

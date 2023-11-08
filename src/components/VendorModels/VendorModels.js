@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import ModelsList from './ModelsList';
 import Loader from '../Loader/Loader';
-import Error from './Error';
+import Error from '../Error/Error';
 
 function VendorModels({ vendorName }) {
   const [status, setStatus] = useState('idle');
@@ -30,9 +30,13 @@ function VendorModels({ vendorName }) {
   }, []);
 
   const filteredModels = models
-    ? models.filter(
-        model => model.vendor.toLowerCase() === vendorName.toLowerCase()
-      )
+    ? models
+        .filter(
+          model => model.vendor.toLowerCase() === vendorName.toLowerCase()
+        )
+        .sort((firstModel, secondModel) =>
+          firstModel.model.localeCompare(secondModel.model)
+        )
     : '';
 
   return (
