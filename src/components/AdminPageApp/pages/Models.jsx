@@ -52,6 +52,7 @@ function Models() {
   const [update, setUpdate] = useState(1);
 
   useEffect(() => {
+    console.log('1');
     setStatus('loading');
     GetModels(setStatus, setModels);
   }, [update]);
@@ -193,7 +194,7 @@ function Models() {
     setModalConfirm(true);
   };
 
-  const filtereModels = models => {
+  const filterModels = models => {
     return models.filter(model => {
       return model.model.toLowerCase().includes(findModel);
     });
@@ -236,7 +237,7 @@ function Models() {
       {status === 'error' && <Error />}
       {models && (
         <ModelsList
-          models={filtereModels(models)}
+          models={filterModels(models)}
           onEdit={handleEditModel}
           onDelete={handleDeleteModel}
         />
