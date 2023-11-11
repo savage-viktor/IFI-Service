@@ -52,7 +52,6 @@ function Models() {
   const [update, setUpdate] = useState(1);
 
   useEffect(() => {
-    console.log('1');
     setStatus('loading');
     GetModels(setStatus, setModels);
   }, [update]);
