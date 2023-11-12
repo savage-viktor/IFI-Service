@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import styles from './Models.module.css';
@@ -16,6 +16,9 @@ import ModelsList from '../components/ModelList/ModelList';
 
 import FindInput from '../components/FindInput/FindInput';
 import AddModelBtn from '../components/AddModelBtn/AddModelBtn';
+import BackUpButton from '../components/BackUpButton/BackUpButton';
+import RestoreButton from '../components/RestoreButton/RestoreButton';
+
 import AddModelForm from '../components/AddModelForm/AddModelForm';
 import Modal from '../components/Modal/Modal';
 import ModalConfirm from '../components/ModalConfirm/ModalConfirm';
@@ -53,7 +56,15 @@ function Models() {
 
   useEffect(() => {
     setStatus('loading');
-    GetModels(setStatus, setModels);
+    GetModels()
+      .then(models => {
+        setModels(models);
+        setStatus('idle');
+      })
+      .catch(error => {
+        console.log(error.message);
+        setStatus('error');
+      });
   }, [update]);
 
   const handleOpenModal = () => {
@@ -201,20 +212,10 @@ function Models() {
 
   return (
     <div className={styles.section}>
-      <ToastContainer
-        position="top-right"
-        autoClose={1000}
-        hideProgressBar
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-      />
       <FindInput onChange={setFindModel} />
       <AddModelBtn onClick={handleOpenModal} />
+      <BackUpButton getQuery={GetModels} name="Моделі" />
+      <RestoreButton />
       {modal && (
         <Modal onClose={handleCloseModal}>
           <AddModelForm

@@ -1,4 +1,4 @@
-import { Route, Routes, NavLink, Outlet } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import SharedLayout from './pages/SharedLayout';
 import Models from './pages/Models';
@@ -13,6 +13,7 @@ function AdminPage() {
         <Route index element={<Models />} />
         <Route path="services" element={<Services />} />
         <Route path="messages" element={<Messages />} />
+        <Route path="shop" element={<Messages />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
