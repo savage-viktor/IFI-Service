@@ -23,6 +23,7 @@ import AddModelForm from '../components/AddModelForm/AddModelForm';
 import Modal from '../components/Modal/Modal';
 import ModalConfirm from '../components/ModalConfirm/ModalConfirm';
 import Confirm from '../components/Confirm/Confirm';
+import BackupLoader from '../components/BackupLoader/BackupLoader';
 
 const initialModel = {
   vendor: '',
@@ -51,6 +52,9 @@ function Models() {
   const [modalConfirmType, setModalConfirmType] = useState('');
   const [deleteId, setDeleteId] = useState('');
   const [findModel, setFindModel] = useState('');
+  const [restoreFile, setRestoreFile] = useState(null);
+  const [loaderCount, setLoaderCount] = useState(0);
+  const [breakRestore, setBreakRestore] = useState(false);
 
   const [update, setUpdate] = useState(1);
 
@@ -175,13 +179,64 @@ function Models() {
 
         break;
 
+      case 'loadBackup':
+        console.log(restoreFile);
+        setLoaderCount(0.1);
+
+        const delay = (ms = 1000) => new Promise(r => setTimeout(r, ms));
+
+        let needBreak = false;
+
+        const getDataSeries = async restoreFile => {
+          for (let index = 1; index <= restoreFile.length; index++) {
+            if (needBreak) {
+              setBreakRestore(true);
+              break;
+            }
+
+            setBreakRestore(false);
+
+            await delay();
+            const res = await fetch(
+              'https://6519e0a5340309952f0cc472.mockapi.io/api/ifiservice/ContactUs',
+              {
+                method: 'POST',
+                headers: { 'content-type': 'application/json' },
+                body: JSON.stringify(restoreFile[index]),
+              }
+            )
+              // eslint-disable-next-line no-loop-func
+              .then(res => {
+                if (!res.ok) {
+                  console.log('помилка 1');
+                  needBreak = true;
+                }
+                setLoaderCount(index);
+              })
+              // eslint-disable-next-line no-loop-func
+              .catch(error => {
+                console.log('Помилка 2');
+                needBreak = true;
+              });
+          }
+          console.log('qwertyui');
+
+          return 0;
+        };
+
+        getDataSeries(restoreFile);
+
+        break;
+
       default:
         alert('Помилка типу модального вікна');
     }
   };
 
   const handleCloseModalConfirm = () => {
+    setRestoreFile(null);
     setModalConfirm(false);
+    setLoaderCount(0);
   };
 
   const handleSubmitModel = model => {
@@ -210,12 +265,19 @@ function Models() {
     });
   };
 
+  const onChooseBackupFile = file => {
+    setRestoreFile(file);
+    setModalConfirmType('loadBackup');
+    setModalConfirmText('Відновлення');
+    setModalConfirm(true);
+  };
+
   return (
     <div className={styles.section}>
       <FindInput onChange={setFindModel} />
       <AddModelBtn onClick={handleOpenModal} />
       <BackUpButton getQuery={GetModels} name="Моделі" />
-      <RestoreButton />
+      <RestoreButton onChooseBackupFile={onChooseBackupFile} />
       {modal && (
         <Modal onClose={handleCloseModal}>
           <AddModelForm
@@ -225,12 +287,35 @@ function Models() {
         </Modal>
       )}
       {modalConfirm && (
-        <ModalConfirm onClose={handleCloseModalConfirm}>
-          <Confirm
-            text={modalConfirmText}
-            accept={handleConfirmModal}
-            decline={handleCloseModalConfirm}
-          />
+        <ModalConfirm
+          onClose={
+            loaderCount === 0 ||
+            breakRestore ||
+            loaderCount === restoreFile.length
+              ? handleCloseModalConfirm
+              : () => {}
+          }
+        >
+          {loaderCount > 0 && (
+            <BackupLoader count={loaderCount} length={restoreFile.length}>
+              {breakRestore && <div>Помилка відновлення бази</div>}
+            </BackupLoader>
+          )}
+
+          {loaderCount === 0 && (
+            <Confirm
+              text={modalConfirmText}
+              accept={handleConfirmModal}
+              decline={handleCloseModalConfirm}
+            >
+              {restoreFile && (
+                <div>
+                  Відновити базу? Буде виконано відновлено {restoreFile.length}
+                  елементів колекції
+                </div>
+              )}
+            </Confirm>
+          )}
         </ModalConfirm>
       )}
       {status === 'loading' && <Loader />}
