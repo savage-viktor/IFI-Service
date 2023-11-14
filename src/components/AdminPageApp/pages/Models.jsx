@@ -180,7 +180,6 @@ function Models() {
         break;
 
       case 'loadBackup':
-        console.log(restoreFile);
         setLoaderCount(0.1);
 
         const delay = (ms = 1000) => new Promise(r => setTimeout(r, ms));
@@ -219,7 +218,6 @@ function Models() {
                 needBreak = true;
               });
           }
-          console.log('qwertyui');
 
           return 0;
         };
@@ -321,11 +319,14 @@ function Models() {
       {status === 'loading' && <Loader />}
       {status === 'error' && <Error />}
       {models && (
-        <ModelsList
-          models={filterModels(models)}
-          onEdit={handleEditModel}
-          onDelete={handleDeleteModel}
-        />
+        <>
+          Всього {filterModels(models).length}
+          <ModelsList
+            models={filterModels(models)}
+            onEdit={handleEditModel}
+            onDelete={handleDeleteModel}
+          />
+        </>
       )}
     </div>
   );

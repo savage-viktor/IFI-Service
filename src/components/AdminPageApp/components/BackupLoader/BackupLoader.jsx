@@ -8,7 +8,7 @@ function BackupLoader({ count, length, children }) {
         <div>Завантажено успішно</div>
       ) : (
         <div>
-          {count}/{length}
+          {Math.round(count)}/{length}
           {children || <Loader />}
         </div>
       )}
