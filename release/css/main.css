@@ -1964,6 +1964,7 @@ img {
   position: relative;
   width: 80%;
   top: 0px;
+  max-height: 400px;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;

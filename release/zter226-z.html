@@ -1,24 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/main.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap"
-      rel="stylesheet"
+    <title>ZTE R226-Z - ремонт</title>
+    <meta
+      name="description"
+      content="ZTE R226-Z - ремонт, розлочка, прошивка, відновлення"
     />
+    <link rel="stylesheet" href="./css/main.min.css" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CR282B8E4Z"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-CR282B8E4Z');
+    </script>
+    <script defer="defer" src="/static/js/model-services.js"></script>
+
+    <link href="/static/css/main.af1eb2e3.css" rel="stylesheet" />
   </head>
+
   <body>
     <header class="container">
       <nav class="site-nav">
         <a href="./index.html">
-          <img height="93px" src="./images/IFI_LOGO4x.png" alt="" />
+          <img
+            height="93px"
+            src="./images/IFI_LOGO4x.png"
+            alt="Логотип компанії"
+          />
         </a>
+        <button
+          class="menu-toggle js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg class="page-header__menu-icon" width="46px" height="32px">
+            <use href="./images/icons_sprite.svg#icon-menu"></use>
+          </svg>
+        </button>
         <ul class="site-nav__list">
           <li class="site-nav__item">
             <a class="site-nav__link" href="./index.html">Головна</a>
@@ -37,23 +67,9 @@
             <a class="site-nav__link" href="./shop.html">Магазин</a>
           </li>
           <li class="site-nav__item">
-            <a
-              class="site-nav__link site-nav__link--active"
-              href="./contacts.html"
-              >Контакти</a
-            >
+            <a class="site-nav__link" href="./contacts.html">Контакти</a>
           </li>
         </ul>
-
-        <button
-          class="menu-toggle js-open-menu"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          <svg class="page-header__menu-icon" width="46px" height="32px">
-            <use href="./images/icons_sprite.svg#icon-menu"></use>
-          </svg>
-        </button>
 
         <div class="menu-container js-menu-container" id="mobile-menu">
           <button class="menu-toggle js-close-menu">
@@ -66,99 +82,17 @@
     </header>
 
     <main>
-      <section class="section">
-        <h1 class="section-title">Контакти</h1>
-        <ul class="contacts-list">
-          <li class="contacts-item">
-            <a
-              class="contacts-item__link"
-              href="https://maps.app.goo.gl/T4SX7Bp6rJJaYVnx6"
-              target="_blank"
-            >
-              <svg class="contacts-item__icon" width="17px" height="19px">
-                <use href="./images/icons_sprite.svg#icon-address"></use>
-              </svg>
-              <span>Ірпінь, вул. Зарифи Алієвої, 104</span>
-            </a>
-          </li>
-          <li class="contacts-item">
-            <a class="contacts-item__link" href="mailto:ifi.remont@gmail.com">
-              <svg class="contacts-item__icon" width="17px" height="13px">
-                <use href="./images/icons_sprite.svg#icon-email"></use>
-              </svg>
-              <span>ifi.remont@gmail.com</span>
-            </a>
-          </li>
-          <li class="contacts-item">
-            <a class="contacts-item__link" href="tel:+380934162750">
-              <svg class="contacts-item__icon" width="18px" height="18px">
-                <use href="./images/icons_sprite.svg#icon-phone"></use>
-              </svg>
-              <span>+38 (093) 416-27-50</span>
-            </a>
-          </li>
-        </ul>
-
-        <div class="mapouter">
-          <div class="gmap_canvas">
-            <iframe
-              src="https://maps.google.com/maps?q=IFI%20%D0%A1%D0%B5%D1%80%D0%B2%D1%96%D1%81&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-              frameborder="0"
-              scrolling="no"
-              style="width: 490px; height: 530px"
-            ></iframe
-            ><style>
-              .mapouter {
-                position: relative;
-                height: 530px;
-                width: 490px;
-                background: #fff;
-              }
-              .maprouter a {
-                color: #fff !important;
-                position: absolute !important;
-                top: 0 !important;
-                z-index: 0 !important;
-              }</style
-            ><a href="https://blooketjoin.org">blooket join</a
-            ><style>
-              .gmap_canvas {
-                overflow: hidden;
-                height: 530px;
-                width: 490px;
-              }
-              .gmap_canvas iframe {
-                position: relative;
-                z-index: 2;
-              }
-            </style>
-          </div>
-        </div>
-        <p class="section-description">
-          Для швидкої та якісної комунікації пишіть нам у Telegram або Viber
-        </p>
-        <ul class="about_us-social">
-          <li class="about_us-social_item">
-            <a href="https://www.facebook.com/dykunviktor/" target="_blank">
-              <svg width="35px" height="35px">
-                <use href="./images/icons_sprite.svg#icon-facebook"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="about_us-social_item">
-            <a href="https://www.instagram.com/viktordykun/" target="_blank">
-              <svg width="35px" height="35px">
-                <use href="./images/icons_sprite.svg#icon-instagram"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
-        <p class="section-description">
-          Реквізити для відправки обладнання по Новій Пошті:
-        </p>
-        <p class="section-description">
-          Ірпінь, відділення 4, (093) 416-27-50, Дикун Віктор
-        </p>
+      <section class="model section">
+        <span class="model-navigation"
+          ><a href="zte.html">ZTE</a>&nbsp> ZTE R226-Z</span
+        >
+        <h1 class="section-title">ZTE R226-Z</h1>
+        <p class="section-description">ZTE R226-Z - опис моделі.</p>
+        <div
+          class="model-detais"
+          model-name="ZTE R226-Z"
+          id="model-services"
+        ></div>
       </section>
     </main>
 
