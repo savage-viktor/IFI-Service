@@ -8,7 +8,7 @@ import styles from './SharedLayout.module.css';
 function SharedLayout() {
   return (
     <>
-      <Nav fill variant="pills" activeKey="1">
+      {/* <Nav fill variant="pills" activeKey="1">
         <Nav.Item>
           <Nav.Link eventKey="1" href="/">
             Моделі
@@ -25,7 +25,7 @@ function SharedLayout() {
             Disabled
           </Nav.Link>
         </Nav.Item>
-      </Nav>
+      </Nav> */}
 
       <div className={styles.adminPage}>
         <nav className={styles.navPanel}>

@@ -187,7 +187,7 @@ function Models() {
         let needBreak = false;
 
         const getDataSeries = async restoreFile => {
-          for (let index = 1; index <= restoreFile.length; index++) {
+          for (let index = 0; index < restoreFile.length; index++) {
             if (needBreak) {
               setBreakRestore(true);
               break;
@@ -210,7 +210,7 @@ function Models() {
                   console.log('помилка 1');
                   needBreak = true;
                 }
-                setLoaderCount(index);
+                setLoaderCount(index + 1);
               })
               // eslint-disable-next-line no-loop-func
               .catch(error => {
